@@ -1,5 +1,17 @@
 SSO Keycloak POC
 =====================
+This `SSO Demo` uses four container instances:
+- keycloak: the OAuth2(OpenID connection) server instance
+- db: the mysql server instance for keycloak backend
+- app1: simple web app
+- app2: simple web app
+
+## Test case:
+The user tries to access the user profile page on one of the web app,
+and is redirected to login page on `keycloak` server at first.
+
+If user is logged in, the further `authentication` on the other web apps will
+not be required.
 
 
 # Pre Install
