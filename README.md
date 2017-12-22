@@ -76,5 +76,22 @@ http://localhost:8092/
 ![ web apps](img/web_app1.png)
 ![ web apps](img/web_app2.png)
 
+# step 8:
+click on the link named `my account` on `web-app1`, the user should be redirected
+to login page on the keycloak server `http://localhost:8080/auth/realms/myrealm/protocol/openid-connect/auth?client_id=web-app1&redirect_uri=http%3A%2F%2Flocalhost%3A8091%2Fme.html&state=228f9b01-2b83-446e-89ce-aac4bfba845e&nonce=82123d67-d176-403b-92aa-2303617d5183&response_mode=fragment&response_type=id_token%20token&scope=openid`
+
+Login with
+```javascript
+user: demo
+passL demo
+```
+After login, the user profile page will be shown:
+![ web apps](img/user_profile.png)
+
+
+# step 9:
+click on the link named `my account` on `web-app2`, the user will `NOT` be redirected 
+to login page, because of login on the `web-app1` in the `step 8`.
+
 
 
