@@ -35,7 +35,7 @@ services:
           - 8091:80
       volumes:
           - ./app1:/var/www/html
-#
+
   app2:
       image: php:7.1-apache
       ports:
