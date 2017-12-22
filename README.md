@@ -6,6 +6,54 @@ This `SSO Demo` uses four container instances:
 - app1: simple web app
 - app2: simple web app
 
+```
+version: '2'
+
+services:
+  db:
+      image: mysql
+      environment:
+          - MYSQL_DATABASE=keycloak
+          - MYSQL_USER=keycloak
+          - MYSQL_PASSWORD=password
+          - MYSQL_ROOT_PASSWORD=root_password
+      ports:
+          - 3306:3306
+
+  keycloak:
+      image: jboss/keycloak
+      environment:
+          - KEYCLOAK_LOGLEVEL=DEBUG
+          - KEYCLOAK_USER=admin
+          - KEYCLOAK_PASSWORD=admin
+          - DB_VENDOR=MYSQL
+          - MYSQL_PORT_3306_TCP_ADDR=db
+          - MYSQL_PORT_3306_TCP_PORT=3306
+      links:
+          - db:db
+      ports:
+          - 8080:8080
+          - 9999:9990
+          - 443:8443
+      volumes:
+          - ./data:/data
+
+  app1:
+      image: php:7.1-apache
+      ports:
+          - 8091:80
+      volumes:
+          - ./app1:/var/www/html
+#
+  app2:
+      image: php:7.1-apache
+      ports:
+          - 8092:80
+      volumes:
+          - ./app2:/var/www/html
+
+```
+
 ## Test case:
 The user tries to access the user profile page on one of the web app,
 and is redirected to login page on `keycloak` server at first.
