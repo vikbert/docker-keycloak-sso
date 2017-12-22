@@ -107,3 +107,7 @@ to login page, because of login on the `web-app1` in the `step 8`.
 
 
 
+> To clean up the test instances
+```javascript
+bash doority.sh clean
+```
