@@ -26,7 +26,9 @@ password: admin
 
 # step 3: 
 create new `realm` named `myrealm`
+
 ![add new realm](img/add_realm.png)
+
 
 # step 4: 
 create new clients named with `web-app1` and `web-app2`
@@ -34,7 +36,7 @@ create new clients named with `web-app1` and `web-app2`
 
 > repeat the operation to create another client named `web-app2`
 
-![list clients](img/add_clients.png)
+![list clients](img/create_clients.png)
 
 # step 5:
 create new user named `demo`
