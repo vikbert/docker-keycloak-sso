@@ -9,7 +9,7 @@ case "$1" in
   ;;
   clean)
     docker-compose stop
-    docker rm -f dooritydockerdemo_keycloak_1 dooritydockerdemo_app1_1 dooritydockerdemo_app2_1 dooritydockerdemo_db_1
+    docker rm -f docker-keycloak-sso_keycloak_1 docker-keycloak-sso_db_1 docker-keycloak-sso_app2_1 docker-keycloak-sso_app1_1
   ;;
   *)
     echo 'Parameter not supported.'

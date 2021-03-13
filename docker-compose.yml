@@ -14,12 +14,11 @@ services:
   keycloak:
       image: jboss/keycloak
       environment:
-          - KEYCLOAK_LOGLEVEL=DEBUG
           - KEYCLOAK_USER=admin
           - KEYCLOAK_PASSWORD=admin
-          - DB_VENDOR=MYSQL
-          - MYSQL_PORT_3306_TCP_ADDR=db
-          - MYSQL_PORT_3306_TCP_PORT=3306
+          - DB_VENDOR=mysql
+          - DB_ADDR=db
+          - DB_PORT=3306
       links:
           - db:db
       ports:
