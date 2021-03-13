@@ -1,0 +1,12 @@
+{
+  "realm": "myrealm",
+  "auth-server-url": "http://localhost:8080/auth/",
+  "ssl-required": "external",
+  "resource": "web-app1",
+  "credentials": {
+    "secret": "21b21c80-afd3-4d0b-9454-c13e631e8a02"
+  },
+  "confidential-port": 0,
+  "enable-cors": true,
+  "clientid": "web-app1"
+}
