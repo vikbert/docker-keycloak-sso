@@ -29,9 +29,9 @@ start the container instanc
 
 # step 2: 
 Login on `keycloak` on `[localhost:8080](http://localhost:8080/auth/)`
-![login keycloak](img/01.heic)
-![login keycloak](img/02.heic)
-![login keycloak](img/03.heic)
+![login keycloak](img/01.png)
+![login keycloak](img/02.png)
+![login keycloak](img/03.png)
 
 ```angular2html
 user: admin
