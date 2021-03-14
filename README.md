@@ -21,6 +21,7 @@ Be sure that the `docker engine` & `docker-compose` are installed.
 - Install docker engine: https://docs.docker.com/engine/installation/
 - Install docker-compose: https://docs.docker.com/compose/install/
 
+![](img/sso-web-apps.gif)
 
 # step 1: 
 start the container instanc
