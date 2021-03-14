@@ -47,7 +47,7 @@ bash run.sh clean
 ```
 
 ### Urls
-Open the two app on the following URLs
+Open the admin console and the apps on the following URLs
 ```bash
 # Keycloak admin console
 http://localhost:8080/auth
@@ -64,3 +64,10 @@ http://localhost:8092/
 user: admin
 password: admin
 ```
+
+### Screenshots
+<img src="img/screen1.png" style="border: 1px solid grey; padding: 4px;" width=400/>
+<img src="img/screen2.png" style="border: 1px solid grey; padding: 4px;" width=400/>
+<img src="img/screen3.png" style="border: 1px solid grey; padding: 4px;" width=400/>
+<img src="img/screen4.png" style="border: 1px solid grey; padding: 4px;" width=400/>
+<img src="img/screen5.png" style="border: 1px solid grey; padding: 4px;" width=400/>
