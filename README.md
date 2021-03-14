@@ -46,15 +46,21 @@ bash run.sh stop
 bash run.sh clean
 ```
 
+### Urls
+Open the two app on the following URLs
+```bash
+# Keycloak admin console
+http://localhost:8080/auth
+
+# Web-app-1
+http://localhost:8091/
+
+# Web-app-2
+http://localhost:8092/
+```
+
 ### Keycloak Admin Login
 ```bash
 user: admin
 password: admin
 ```
-### Two Web Apps
-Open the two app on the following URLs
-```html
-http://localhost:8091/
-http://localhost:8092/
-```
-
