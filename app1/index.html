@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="http://zeptojs.com/zepto.min.js"></script>
     <script src="http://localhost:8080/auth/js/keycloak.js"></script>
     <script src="http://localhost:8091/app.js"></script>
     <title>web-app-1</title>
-</head>
-<body>
-<h1>Web App 1</h1>
+  </head>
+  <body>
+    <h1>Web App 1</h1>
     <nav role="navigation">
-        <ul>
-            <li>
-                <a title="login" id="login" href="http://localhost:8091/me.html">My Account</a>
-            </li>
-            <li>
-                <a title="logout" id="logout" href="http://localhost:8091">logout</a>
-            </li>
-        </ul>
+      <div id="status"></div>
+      <ul>
+        <li>
+          <a title="login" id="login" href="http://localhost:8091/me.html"
+            >My Account</a
+          >
+        </li>
+        <li>
+          <a title="logout" id="logout" href="http://localhost:8091">logout</a>
+        </li>
+      </ul>
     </nav>
     <script>
-        $(function () {
-            $('#login').on('click', function(e) {
-                e.preventDefault();
+      $(function () {
+        window.keycloak
+          .init({
+            flow: 'implicit',
+            onLoad: 'check-sso',
+          })
+          .then(function (authenticated) {
+            if (authenticated) {
+              $('#status').html($('<pre>SSO Authenticated ✅</pre>'));
+            } else {
+              $('#status').html($('<pre>SSO Not Authenticated 🔥</pre>'));
+            }
+          })
+          .catch(function () {
+            console.log('failed to initialize');
+          });
+        $('#login').on('click', function (e) {
+          e.preventDefault();
 
-                window.keycloak.login({
-                    'redirectUri': 'http://localhost:8091/me.html'
-                });
-            });
-            $('#logout').on('click', function(e) {
-                e.preventDefault();
-
-                window.keycloak.logout({
-                    'redirectUri': 'http://localhost:8091/index.html'
-                });
-            });
+          window.keycloak.login({
+            redirectUri: 'http://localhost:8091/me.html',
+          });
         });
+        $('#logout').on('click', function (e) {
+          e.preventDefault();
+
+          window.keycloak.logout({
+            redirectUri: 'http://localhost:8091/index.html',
+          });
+        });
+      });
     </script>
-</body>
+  </body>
 </html>

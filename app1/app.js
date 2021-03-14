@@ -7,18 +7,7 @@ let keycloakConfig = {
         "secret": "90d014fa-89bf-45b5-ab87-bcd8a9028c7f"
     },
     "confidential-port": 0,
+    "enable-cors": true,
     "clientId": "web-app1"
 };
 window.keycloak = new Keycloak(keycloakConfig);
-
-$(function() {
-    console.log(keycloakConfig);
-    window.keycloak.init({
-        flow: 'implicit',
-        onLoad: 'check-sso'
-    }).success(function(authenticated) {
-        console.log(authenticated ? 'authenticated' : 'not authenticated');
-    }).error(function() {
-        console.log('failed to initialize');
-    });
-});

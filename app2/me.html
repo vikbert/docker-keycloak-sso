@@ -12,25 +12,37 @@
 <h2 id="page-title">web-app-2: User Info</h2>
 <div id="main"></div>
 <script>
-    $(function () {
-        window.keycloak.loadUserInfo()
-            .success(function(data) {
-                $('#main').after($('<pre>' + JSON.stringify(data, null, '\t') + '</pre>'));
-                $('#main').after($('<a>', {
-                    text: 'back to homepage',
-                    href: 'http://localhost:8092'
-                }));
-            }.bind(this))
-            .error(function() {
-               $('#page-title').html('Please login again. Jump to homepage in 2 seconds . . .');
-                setTimeout(function(){
-                    window.keycloak.logout({
-                        'redirectUri': 'http://localhost:8092/index.html'
-                    });
-                }, 2000);
-            }.bind(this));
-    });
-
+  $(function () {
+    window.keycloak
+      .init({
+        flow: 'implicit',
+        onLoad: 'check-sso',
+      })
+      .then(function (authenticated) {
+        if (!authenticated) {
+          window.keycloak.logout({
+            'redirectUri': 'http://localhost:8092/index.html'
+          });
+        }
+        window.keycloak
+          .loadUserInfo()
+          .then((data) => {
+            $('#main').after(
+              $('<pre>' + JSON.stringify(data, null, '\t') + '</pre>'),
+              $('<a>', {
+                text: 'back to homepage',
+                href: 'http://localhost:8092',
+              }),
+            );
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      })
+      .catch(function () {
+        console.log('failed to initialize');
+      });
+  });
 </script>
 </body>
 </html>
