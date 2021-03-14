@@ -66,8 +66,8 @@ password: admin
 ```
 
 ### Screenshots
-<img src="img/screen1.png" style="border: 1px solid grey; padding: 4px;" width=400/>
-<img src="img/screen2.png" style="border: 1px solid grey; padding: 4px;" width=400/>
-<img src="img/screen3.png" style="border: 1px solid grey; padding: 4px;" width=400/>
-<img src="img/screen4.png" style="border: 1px solid grey; padding: 4px;" width=400/>
-<img src="img/screen5.png" style="border: 1px solid grey; padding: 4px;" width=400/>
+<img src="img/screen1.png" style="border: 1px solid grey; padding: 4px;" width=800/>
+<img src="img/screen2.png" style="border: 1px solid grey; padding: 4px;" width=800/>
+<img src="img/screen3.png" style="border: 1px solid grey; padding: 4px;" width=800/>
+<img src="img/screen4.png" style="border: 1px solid grey; padding: 4px;" width=800/>
+<img src="img/screen5.png" style="border: 1px solid grey; padding: 4px;" width=800/>
