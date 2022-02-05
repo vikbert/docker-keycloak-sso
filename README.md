@@ -22,6 +22,7 @@ Be sure that the `docker engine` & `docker-compose` are installed.
 - add the password to the test user
 
 Tutorial on youtube: <https://youtu.be/G4IQlV65Sl0>
+
 <a href="https://youtu.be/G4IQlV65Sl0">
   <img src="img/1.png" width=400/>
 </a>
@@ -29,6 +30,7 @@ Tutorial on youtube: <https://youtu.be/G4IQlV65Sl0>
 ## Demostrate the web apps with `sso`
 
 Tutorial on youtube : <https://youtu.be/M2pz9RoE9zA>
+
 <a href="https://youtu.be/M2pz9RoE9zA">
   <img src="img/2.png" width=400/>
 </a>
